@@ -3,6 +3,8 @@ package com.example.obvioustest.adapter
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
+import com.example.obvioustest.databinding.ImageItemBinding
+import com.example.obvioustest.listener.ImageClickListener
 import com.example.obvioustest.models.ImageData
 import com.example.obvioustest.viewbinding.BindingViewHolder
 import com.example.obvioustest.viewbinding.createBindingViewHolder
@@ -11,7 +13,7 @@ import com.example.obvioustest.viewbinding.createBindingViewHolder
 // to use generics. typealias allows this to be very clean
 typealias ImageViewHolder = BindingViewHolder<ImageItemBinding>
 
-class AlbumAdapter(private val albumCLickListener: AlbumCLickListener) :
+class AlbumAdapter(private val imageClickListener: ImageClickListener) :
     ListAdapter<ImageData, ImageViewHolder>(ImageDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder {
