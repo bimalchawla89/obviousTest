@@ -14,7 +14,6 @@ import kotlin.reflect.KProperty
 /**
  * A lifecycle aware [ReadOnlyProperty] to utilize delegation in kotlin for ViewBinding
  *
- * @author Simon.Sickle@pilottravelcenters.com
  * @param R the [ComponentActivity] or [Fragment] that you are using ViewBinding with
  * @param T the [ViewBinding] class generated for your view
  * @property viewBinder method that returns a [ViewBinding] instance for the view to utilize
@@ -28,7 +27,6 @@ class ViewBindingProperty<R : LifecycleOwner, T : ViewBinding>(
     /**
      * Get the appropriate lifecycle owner from the Fragment/Activity
      *
-     * @author Simon.Sickle@pilottravelcenters.com
      * @param thisRef is the reference of the Fragment/Activity
      * @return [LifecycleOwner] attached to your view
      */
@@ -46,7 +44,6 @@ class ViewBindingProperty<R : LifecycleOwner, T : ViewBinding>(
     /**
      * Get the value of the backing field, set it if not already set. Lifecycle Aware.
      *
-     * @author Simon.Sickle@pilottravelcenters.com
      * @param thisRef is the [LifecycleOwner] of the [ViewBinding]
      * @param property is unused for our purposes here
      */

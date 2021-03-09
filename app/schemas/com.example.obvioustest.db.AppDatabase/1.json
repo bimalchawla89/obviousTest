@@ -2,16 +2,16 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "9f5ca6b33ad793941d24c95c50c3ef69",
+    "identityHash": "8bc28f823d92eaa1e975f9caa86e0e1f",
     "entities": [
       {
         "tableName": "ImageData",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `copyright` TEXT, `date` TEXT, `explanation` TEXT, `hdurl` TEXT, `media_type` TEXT, `service_version` TEXT, `title` TEXT, `url` TEXT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`title` TEXT NOT NULL, `copyright` TEXT, `date` TEXT, `explanation` TEXT, `hdurl` TEXT, `mediaType` TEXT, `serviceVersion` TEXT, `url` TEXT, PRIMARY KEY(`title`))",
         "fields": [
           {
-            "fieldPath": "id",
-            "columnName": "id",
-            "affinity": "INTEGER",
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT",
             "notNull": true
           },
           {
@@ -40,19 +40,13 @@
           },
           {
             "fieldPath": "mediaType",
-            "columnName": "media_type",
+            "columnName": "mediaType",
             "affinity": "TEXT",
             "notNull": false
           },
           {
             "fieldPath": "serviceVersion",
-            "columnName": "service_version",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "title",
-            "columnName": "title",
+            "columnName": "serviceVersion",
             "affinity": "TEXT",
             "notNull": false
           },
@@ -65,9 +59,9 @@
         ],
         "primaryKey": {
           "columnNames": [
-            "id"
+            "title"
           ],
-          "autoGenerate": true
+          "autoGenerate": false
         },
         "indices": [],
         "foreignKeys": []
@@ -76,7 +70,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '9f5ca6b33ad793941d24c95c50c3ef69')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '8bc28f823d92eaa1e975f9caa86e0e1f')"
     ]
   }
 }

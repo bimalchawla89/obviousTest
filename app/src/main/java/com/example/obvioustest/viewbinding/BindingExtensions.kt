@@ -15,7 +15,6 @@ import kotlin.reflect.full.staticFunctions
 /**
  * Use reflection to get the static inflate method of the [ViewBinding] class
  *
- * @author Simon.Sickle@pilottravelcenters.com
  * @return the static inflate [KFunction] used to inflate a view with a [ViewBinding]
  */
 fun <T : ViewBinding> getInflateMethod(kClass: KClass<T>): KFunction<*> {
@@ -33,7 +32,6 @@ fun <T : ViewBinding> getInflateMethod(kClass: KClass<T>): KFunction<*> {
 /**
  * Using reflection, inflate a [ViewBinding] and return it
  *
- * @author Simon.Sickle@pilottravelcenters.com
  * @return [ViewBinding] class
  */
 fun <T : ViewBinding> KClass<T>.inflate(
@@ -48,7 +46,6 @@ fun <T : ViewBinding> KClass<T>.inflate(
 /**
  * Use reflection to get the static bind method of the [ViewBinding] class
  *
- * @author Simon.Sickle@pilottravelcenters.com
  * @return the static bind [Method] used to inflate a view with a [ViewBinding]
  */
 fun <T : ViewBinding> getBindMethod(kClass: KClass<T>): KFunction<*> {
@@ -65,7 +62,6 @@ fun <T : ViewBinding> getBindMethod(kClass: KClass<T>): KFunction<*> {
 /**
  * Using reflection, bind a [View] to the [ViewBinding]
  *
- * @author Simon.Sickle@pilottravelcenters.com
  * @return [ViewBinding] class
  */
 fun <T : ViewBinding> KClass<T>.bind(view: View): T {
@@ -76,7 +72,6 @@ fun <T : ViewBinding> KClass<T>.bind(view: View): T {
 /**
  * Helper method to automatically inflate a [ViewBinding] and delegate it to a property
  *
- * @author Simon.Sickle@pilottravelcenters.com
  * @param T the [ViewBinding] class for the view you wish to inflate
  * @return [ReadOnlyProperty] that is lifecycle aware
  */
@@ -89,7 +84,6 @@ inline fun <reified T : ViewBinding> ComponentActivity.viewBinding(): ReadOnlyPr
 /**
  * Helper method to automatically inflate a [ViewBinding] and delegate it to a property
  *
- * @author Simon.Sickle@pilottravelcenters.com
  * @param T the [ViewBinding] class for the view you wish to bind to
  * @return [ReadOnlyProperty] that is lifecycle aware
  */
@@ -100,7 +94,6 @@ inline fun <reified T : ViewBinding> Fragment.viewBinding(): ReadOnlyProperty<Fr
 /**
  * Helper method to create a [BindingViewHolder] in your Recycler Adapter
  *
- * @author Simon.Sickle@pilottravelcenters.com
  * @param T the [ViewBinding] class generated for your ViewHolder layout
  * @param parent the parent of the ViewHolder
  * @see [BindingViewHolder]
